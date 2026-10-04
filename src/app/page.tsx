@@ -56,66 +56,106 @@ const FEATURED = [
 export default function Home() {
   return (
     <>
-      {/* ============ HERO — no pills, bold split ============ */}
-      <section className="relative overflow-hidden bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-12 sm:px-6 lg:grid-cols-2 lg:items-center lg:pt-20">
-          <div>
-            <p className="eyebrow">
-              <span className="eyebrow-rule" />
-              RCB Holdings · Hokandara, Sri Lanka
+      {/* ============ HERO — futuristic dark shell, card collage ============ */}
+      <section className="bg-white px-3 pt-4 sm:px-5 sm:pt-6">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-brand-deep">
+          {/* ambient glow */}
+          <div aria-hidden className="pointer-events-none absolute inset-0">
+            <div className="absolute -top-40 right-[10%] h-[28rem] w-[28rem] rounded-full bg-brand/40 blur-3xl" />
+            <div className="absolute -bottom-48 -left-24 h-[24rem] w-[24rem] rounded-full bg-brand/20 blur-3xl" />
+          </div>
+
+          {/* inner top bar */}
+          <div className="relative flex items-center justify-between px-5 pt-5 sm:px-8 sm:pt-6">
+            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-white/60">
+              RCB Holdings · Est. 1986
             </p>
-            <h1 className="display mt-5 text-6xl text-brand-ink sm:text-7xl xl:text-8xl">
-              Heavy machines.
-              <br />
-              <span className="text-brand">Solid blocks.</span>
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-steel">
-              Construction machinery, block making machines, interlock paving and
-              cement blocks — from our yard in Hokandara to your site, backed by
-              over 30 years in the industry.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Button render={<Link href="/machinery" />} size="lg" className="rounded-md bg-brand px-7 py-6 text-base font-bold text-white hover:bg-brand-deep">
-                Explore Machinery <ArrowRight className="ml-2 h-5 w-5" />
+            <div className="flex items-center gap-4">
+              <a
+                href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}
+                className="hidden items-center gap-2 font-mono text-xs tracking-wider text-white/70 transition-colors hover:text-white md:flex"
+              >
+                <Phone className="h-3.5 w-3.5" />
+                {CONTACT.phones[0]}
+              </a>
+              <Button
+                render={<Link href="/quote" />}
+                className="rounded-lg bg-white px-5 font-bold text-brand-deep hover:bg-tint"
+              >
+                Request a Quote
               </Button>
-              <Button render={<Link href="/concrete-products" />} size="lg" variant="outline" className="rounded-md border-2 border-brand px-7 py-6 text-base font-bold text-brand hover:bg-tint">
-                Concrete Products
-              </Button>
-            </div>
-            <div className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t-2 border-brand pt-6">
-              {[
-                ["30+", "Years in industry"],
-                ["7", "Machine categories"],
-                ["10", "Block & paver lines"],
-              ].map(([n, label]) => (
-                <div key={label}>
-                  <p className="display text-4xl text-brand">{n}</p>
-                  <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-steel">
-                    {label}
-                  </p>
-                </div>
-              ))}
             </div>
           </div>
 
-          <div className="relative">
-            <div className="shadow-hard overflow-hidden rounded-lg border-2 border-brand">
-              <Image
-                src="/images/hero-excavator.jpg"
-                alt="Excavator at work on a construction site"
-                width={1200}
-                height={1400}
-                className="h-[420px] w-full object-cover lg:h-[560px]"
-                priority
-              />
+          {/* card collage */}
+          <div className="relative grid gap-4 px-5 pb-5 pt-5 sm:px-8 sm:pb-8 lg:grid-cols-[360px_1fr]">
+            {/* left column */}
+            <div className="order-2 flex flex-col gap-4 lg:order-1">
+              <Card className="rounded-2xl border-0 bg-white">
+                <CardContent className="p-6 sm:p-7">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-steel">
+                    Pioneering the industry
+                  </p>
+                  <p className="display mt-3 text-6xl text-brand">30+</p>
+                  <p className="mt-2 text-sm leading-relaxed text-steel">
+                    Years of machinery, paving and blocks — from the first
+                    Sri Lankan block machine to fully automated plants.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="flex-1 rounded-2xl border-0 bg-white">
+                <CardContent className="flex h-full flex-col p-6 sm:p-7">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-steel">
+                    Introduction
+                  </p>
+                  <p className="mt-3 text-lg font-bold leading-snug text-brand-ink">
+                    Heavy machines. Solid blocks.
+                  </p>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-steel">
+                    Construction machinery, block making machines, interlock
+                    paving and cement blocks — from our yard in Hokandara to
+                    your site.
+                  </p>
+                  <Button
+                    render={<Link href="/machinery" />}
+                    className="mt-6 w-full rounded-lg bg-brand-deep font-bold text-white hover:bg-brand"
+                  >
+                    Explore Machinery <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
             </div>
-            <div className="absolute -bottom-6 -left-4 bg-brand px-5 py-4 text-white shadow-lift sm:-left-8">
-              <p className="font-mono text-[11px] uppercase tracking-[0.18em] opacity-80">
-                Featured
-              </p>
-              <p className="display mt-1 text-2xl">SDLG LG6225E</p>
-              <p className="mt-1 text-sm opacity-85">21.7-tonne crawler excavator</p>
-            </div>
+
+            {/* headline card */}
+            <Card className="order-1 overflow-hidden rounded-2xl border-0 bg-white lg:order-2">
+              <CardContent className="p-6 sm:p-8">
+                <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-steel">
+                  RCB Holdings (Pvt) Ltd — Hokandara, Sri Lanka
+                </p>
+                <h1 className="display mt-4 text-5xl leading-[0.95] text-brand-ink sm:text-6xl xl:text-7xl">
+                  We craft the
+                  <br />
+                  future <span className="text-brand">built.</span>
+                </h1>
+                <div className="relative mt-6 overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/hero-excavator.jpg"
+                    alt="Excavator at work on a construction site"
+                    width={1400}
+                    height={900}
+                    className="h-64 w-full object-cover sm:h-80 lg:h-[380px]"
+                    priority
+                  />
+                  <div className="absolute bottom-4 left-4 rounded-md bg-brand-deep/90 px-4 py-2.5 backdrop-blur">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/70">
+                      Featured
+                    </p>
+                    <p className="display text-lg text-white">SDLG LG6225E</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
