@@ -56,71 +56,72 @@ const FEATURED = [
 export default function Home() {
   return (
     <>
-      {/* ============ HERO — Dim Mood grid: full-width top card + split bottom row ============ */}
+      {/* ============ HERO — card collage with curved river seam ============ */}
       <section className="bg-white px-3 pt-4 sm:px-5 sm:pt-6">
-        <div className="mx-auto max-w-7xl rounded-[2rem] bg-tint p-4 sm:p-7">
-          {/* top card: stat | headline */}
-          <Card className="rounded-[1.5rem] border border-line bg-white shadow-lift">
-            <div className="grid lg:grid-cols-[29%_1fr]">
-              <CardContent className="order-2 p-7 sm:p-9 lg:order-1">
-                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-steel">
-                  Pioneering the industry
-                </p>
-                <p className="mt-2 text-6xl font-black tracking-tight text-[#0a0f1e]">
-                  30+
-                </p>
-                <p className="mt-3 max-w-xs text-[13px] leading-relaxed text-steel">
-                  Years of machinery, paving and blocks — from the first Sri
-                  Lankan block machine to fully automated plants.
-                </p>
-              </CardContent>
-              <CardContent className="order-1 p-7 pb-0 sm:p-9 sm:pb-0 lg:order-2 lg:pb-9">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-tint">
+          {/* card collage with curved river seam */}
+          <div className="relative flex flex-col gap-5 p-6 sm:p-10 lg:flex-row">
+            {/* left stack */}
+            <div className="flex w-full flex-col gap-5 lg:w-[29%]">
+              <Card className="rounded-[1.75rem] border border-line bg-white shadow-lift lg:rounded-br-[4.5rem]">
+                <CardContent className="p-6 sm:p-7">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-steel">
+                    Pioneering the industry
+                  </p>
+                  <p className="mt-2 text-6xl font-black tracking-tight text-[#0a0f1e]">
+                    30+
+                  </p>
+                  <p className="mt-3 text-[13px] leading-relaxed text-steel">
+                    Years of machinery, paving and blocks — from the first Sri
+                    Lankan block machine to fully automated plants.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="flex-1 rounded-[1.75rem] border border-line bg-white shadow-lift lg:rounded-tr-[4.5rem]">
+                <CardContent className="flex h-full flex-col p-6 sm:p-7">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-steel">
+                    Introduction
+                  </p>
+                  <p className="mt-3 text-[22px] font-extrabold leading-snug tracking-tight text-[#0a0f1e]">
+                    Heavy machines.
+                    <br />
+                    Solid blocks.
+                  </p>
+                  <p className="mt-3 flex-1 text-[13px] leading-relaxed text-steel">
+                    Construction machinery, block making machines, interlock
+                    paving and cement blocks — from our yard in Hokandara to
+                    your site.
+                  </p>
+                  <Button
+                    render={<Link href="/machinery" />}
+                    className="mt-6 w-full rounded-full bg-[#0a0f1e] font-bold text-white hover:bg-brand"
+                  >
+                    Explore Machinery <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* headline card */}
+            <Card className="flex-1 rounded-[1.75rem] border border-line bg-white shadow-lift lg:rounded-tl-[4.5rem]">
+              <CardContent className="p-6 sm:p-10">
                 <h1 className="text-5xl font-black leading-[0.95] tracking-tight text-[#0a0f1e] sm:text-6xl xl:text-7xl">
                   We craft the
                   <br />
                   future <span className="text-brand">built.</span>
                 </h1>
+                <div className="mt-6 overflow-hidden rounded-2xl lg:rounded-tl-[2.5rem]">
+                  <Image
+                    src="/images/hero-excavator.jpg"
+                    alt="Excavator at work on a construction site"
+                    width={1400}
+                    height={900}
+                    className="h-64 w-full object-cover sm:h-80 lg:h-[400px]"
+                    priority
+                  />
+                </div>
               </CardContent>
-            </div>
-          </Card>
-
-          {/* bottom row: intro | photo */}
-          <div className="mt-5 grid gap-5 lg:grid-cols-[29%_1fr]">
-            <Card className="rounded-[1.5rem] border border-line bg-white shadow-lift">
-              <CardContent className="flex h-full flex-col p-7 sm:p-9">
-                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-steel">
-                  Introduction
-                </p>
-                <p className="mt-3 text-[22px] font-extrabold leading-snug tracking-tight text-[#0a0f1e]">
-                  Heavy machines.
-                  <br />
-                  Solid blocks.
-                </p>
-                <p className="mt-3 flex-1 text-[13px] leading-relaxed text-steel">
-                  Construction machinery, block making machines, interlock
-                  paving and cement blocks — from our yard in Hokandara to
-                  your site.
-                </p>
-                <Button
-                  render={<Link href="/machinery" />}
-                  className="mt-6 w-full rounded-full bg-[#0a0f1e] font-bold text-white hover:bg-brand"
-                >
-                  Explore Machinery <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden rounded-[1.5rem] border border-line bg-white shadow-lift">
-              <div className="h-full p-3 sm:p-4">
-                <Image
-                  src="/images/hero-excavator.jpg"
-                  alt="Excavator at work on a construction site"
-                  width={1400}
-                  height={900}
-                  className="h-72 w-full rounded-xl object-cover sm:h-96 lg:h-full lg:min-h-[420px]"
-                  priority
-                />
-              </div>
             </Card>
           </div>
         </div>
