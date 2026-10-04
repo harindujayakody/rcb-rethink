@@ -15,7 +15,7 @@ import { PageHero, SectionHeading, CtaBand } from "@/components/sections";
 import { Card, CardContent } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { CONTACT } from "@/lib/data";
+import { CONTACT, STEEL_COPY } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Steel Construction & Ready Mix Concrete Sri Lanka | RCB Holdings",
@@ -74,8 +74,12 @@ export default function ConstructionPage() {
               <SectionHeading
                 eyebrow="Steel Construction"
                 title="Open Steel Constructions"
-                description="Approx. 30 years of experience — the company's own published claim — designing, fabricating and erecting steel structures across Sri Lanka."
               />
+              <div className="mt-6 space-y-4 leading-relaxed text-steel">
+                {STEEL_COPY.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
               <div className="mt-10 grid gap-4 sm:grid-cols-2">
                 {STEEL_SERVICES.map((s) => (
                   <Card key={s.title} className="rounded-lg border-line">

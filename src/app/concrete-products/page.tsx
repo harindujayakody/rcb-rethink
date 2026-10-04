@@ -11,7 +11,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { INTERLOCK_PRODUCTS, BLOCK_PRODUCTS } from "@/lib/data";
+import { INTERLOCK_PRODUCTS, BLOCK_PRODUCTS, INTERLOCK_COPY } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Interlock Paving & Cement Blocks | RCB Holdings",
@@ -44,7 +44,7 @@ export default function ConcreteProductsPage() {
           <SectionHeading
             eyebrow="Interlock Paving"
             title="Laid to last."
-            description="In the interlock business since 1986. Four proven paver profiles, each manufactured to consistent dimensions in our Hokandara yard."
+            description="In the interlock business since 1986 — four proven paver profiles, manufactured to consistent dimensions in our Hokandara yard and exported to the Maldives and India."
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {INTERLOCK_PRODUCTS.map((p, i) => (
@@ -77,6 +77,14 @@ export default function ConcreteProductsPage() {
                   </div>
                 </CardContent>
               </Card>
+            ))}
+          </div>
+
+          <div className="mt-10 grid gap-6 rounded-lg border border-line bg-tint p-6 sm:p-8 lg:grid-cols-2">
+            {INTERLOCK_COPY.map((p, i) => (
+              <p key={i} className="leading-relaxed text-steel">
+                {p}
+              </p>
             ))}
           </div>
         </div>

@@ -124,7 +124,7 @@ export default function Home() {
       <section className="border-y border-line bg-mist">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
           <p className="text-center font-mono text-[11px] uppercase tracking-[0.22em] text-steel">
-            Machinery from the names that build
+            Authorized distributor in Sri Lanka
           </p>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
             {BRANDS.map((b) => (

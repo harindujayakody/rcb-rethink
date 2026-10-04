@@ -92,6 +92,9 @@ export const MACHINE_CATEGORIES: MachineCategory[] = [
       { slug: "lg956f", name: "LG956F", brand: "SDLG", tagline: "SDLG wheel loader — specifications on request.", image: "/images/machinery-yard.jpg", specs: [], features: [] },
       { slug: "lg936l", name: "LG936L", brand: "SDLG", tagline: "SDLG wheel loader — specifications on request.", image: "/images/machinery-yard.jpg", specs: [], features: [] },
       { slug: "lg918", name: "LG918", brand: "SDLG", tagline: "SDLG compact wheel loader — specifications on request.", image: "/images/machinery-yard.jpg", specs: [], features: [] },
+      { slug: "yn920d", name: "YN920D", brand: "YINENG", tagline: "YINENG wheel loader — specifications on request.", image: "/images/machinery-yard.jpg", specs: [], features: [] },
+      { slug: "yn917g", name: "YN917G", brand: "YINENG", tagline: "YINENG wheel loader — specifications on request.", image: "/images/machinery-yard.jpg", specs: [], features: [] },
+      { slug: "yn926g", name: "YN926G", brand: "YINENG", tagline: "YINENG wheel loader — specifications on request.", image: "/images/machinery-yard.jpg", specs: [], features: [] },
     ],
   },
   {
@@ -126,6 +129,8 @@ export const MACHINE_CATEGORIES: MachineCategory[] = [
         ],
       },
       { slug: "e660f", name: "E660F", brand: "SDLG", tagline: "SDLG excavator — specifications on request.", image: "/images/hero-excavator.jpg", specs: [], features: [] },
+      { slug: "e680f", name: "E680F", brand: "SDLG", tagline: "SDLG excavator — specifications on request.", image: "/images/hero-excavator.jpg", specs: [], features: [] },
+      { slug: "lg6135e", name: "LG6135E", brand: "SDLG", tagline: "SDLG crawler excavator — specifications on request.", image: "/images/hero-excavator.jpg", specs: [], features: [] },
     ],
   },
   {
@@ -157,6 +162,7 @@ export const MACHINE_CATEGORIES: MachineCategory[] = [
           "Easy maintenance access",
         ],
       },
+      { slug: "rs8140", name: "RS8140", brand: "SDLG", tagline: "SDLG single-drum vibratory road roller — specifications on request.", image: "/images/machinery-yard.jpg", specs: [], features: [] },
     ],
   },
   {
@@ -168,6 +174,8 @@ export const MACHINE_CATEGORIES: MachineCategory[] = [
     brands: ["SDLG"],
     models: [
       { slug: "g9138", name: "G9138", brand: "SDLG", tagline: "SDLG motor grader — specifications on request.", image: "/images/machinery-yard.jpg", specs: [], features: [] },
+      { slug: "g9165", name: "G9165", brand: "SDLG", tagline: "SDLG motor grader — specifications on request.", image: "/images/machinery-yard.jpg", specs: [], features: [] },
+      { slug: "g9180", name: "G9180", brand: "SDLG", tagline: "SDLG motor grader — specifications on request.", image: "/images/machinery-yard.jpg", specs: [], features: [] },
     ],
   },
   {
@@ -176,9 +184,24 @@ export const MACHINE_CATEGORIES: MachineCategory[] = [
     description:
       "Automated block and paver production lines — from semi-automatic units to fully automatic plants.",
     image: "/images/industrial-1.jpg",
-    brands: ["Noah", "Shengya"],
+    brands: ["Noah", "Shengya", "TNY"],
     models: [
-      { slug: "qtj4-26a", name: "QTJ4-26A", brand: "Noah / Shengya", tagline: "Automatic block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
+      { slug: "noah-qt3-15", name: "QT3-15", brand: "Noah", tagline: "Noah block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
+      { slug: "noah-qt4-15", name: "QT4-15", brand: "Noah", tagline: "Noah block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
+      { slug: "noah-qt6-15", name: "QT6-15", brand: "Noah", tagline: "Noah block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
+      { slug: "noah-qt8-15", name: "QT8-15", brand: "Noah", tagline: "Noah block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
+      { slug: "noah-qt9-15", name: "QT9-15", brand: "Noah", tagline: "Noah block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
+      { slug: "noah-qt12-15", name: "QT12-15", brand: "Noah", tagline: "Noah block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
+      { slug: "shengya-qmr2-45", name: "QMR2-45", brand: "Shengya", tagline: "Shengya block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
+      { slug: "shengya-qtj4-40", name: "QTJ4-40", brand: "Shengya", tagline: "Shengya block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
+      { slug: "shengya-qtj4-26a", name: "QTJ4-26A", brand: "Shengya", tagline: "Shengya automatic block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
+      { slug: "shengya-qt4-40-diesel", name: "QT4-40 Diesel Hydraulic", brand: "Shengya", tagline: "Shengya diesel hydraulic block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
+      { slug: "tny-qt3-15", name: "QT3-15", brand: "TNY", tagline: "TNY block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
+      { slug: "tny-qt4-15", name: "QT4-15", brand: "TNY", tagline: "TNY block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
+      { slug: "tny-qt6-15", name: "QT6-15", brand: "TNY", tagline: "TNY block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
+      { slug: "tny-qt8-15", name: "QT8-15", brand: "TNY", tagline: "TNY block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
+      { slug: "tny-qt9-15", name: "QT9-15", brand: "TNY", tagline: "TNY block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
+      { slug: "tny-qt10-15", name: "QT10-15", brand: "TNY", tagline: "TNY block making machine — specifications on request.", image: "/images/industrial-1.jpg", specs: [], features: [] },
     ],
   },
   {
@@ -300,4 +323,53 @@ export const GALLERY = [
   { src: "/images/industrial-1.jpg", caption: "Block production" },
   { src: "/images/industrial-2.jpg", caption: "Plant & machinery" },
   { src: "/images/hero-site.jpg", caption: "On site" },
+];
+
+/* ---------------- Authorized distributorships (per rcb.lk) ---------------- */
+
+export interface Distributorship {
+  brand: string;
+  scope: string;
+}
+
+export const DISTRIBUTORSHIPS: Distributorship[] = [
+  { brand: "SDLG", scope: "Wheel loaders, excavators, road rollers, graders" },
+  { brand: "YINENG", scope: "Wheel loaders" },
+  { brand: "Noah", scope: "Block making machines" },
+  { brand: "Shengya", scope: "Block making machines" },
+  { brand: "Jinbaoshan", scope: "Stone crushers" },
+  { brand: "SHANTUI", scope: "Forklifts" },
+];
+
+/* ---------------- Social ---------------- */
+
+export const SOCIAL = [
+  { label: "Facebook", href: "https://www.facebook.com/RCB-Holdings-pvt-Ltd-995613153838118/" },
+  { label: "YouTube", href: "https://www.youtube.com/playlist?list=PLnz2ioOEdGVLQcQgHM3EoPB_HSpArBlPU" },
+  { label: "Twitter", href: "https://twitter.com/rcbholdings1" },
+];
+
+export const YOUTUBE_PLAYLIST_EMBED =
+  "https://www.youtube.com/embed/videoseries?list=PLnz2ioOEdGVLQcQgHM3EoPB_HSpArBlPU";
+
+/* ---------------- Company story (per rcb.lk) ---------------- */
+
+export const HISTORY_PARAGRAPHS = [
+  "Started the business 30 years ago after buying the first Sri Lankan manufactured cement block making machine. Since then we have served the industry with superior quality and trust.",
+  "Today we supply not only cement blocks to the market but interlock pavings as well — and we have become the leader in supplying interlock concrete pavings to the Sri Lankan market for the last decade.",
+  "We import interlock paving making machines under our name RCB and distribute throughout Sri Lanka. We are the authorized distributor for SDLG construction machinery, YINENG wheel loaders, Noah and Shengya block making machines, Jinbaoshan stone crushers and SHANTUI forklifts in Sri Lanka.",
+  "RCB Holdings is an ICTAD registered construction company, and we have stood by the Sri Lankan government in various ways — contributing to construction projects carried out across the country.",
+];
+
+export const CHAIRMAN_QUOTE =
+  "RCB is the success of 30 years of hard work. Today we introduced the first fully automated interlock paving machine to Sri Lanka under our name RCB, and we are the authorized distributor for YINENG wheel loaders, Noah block making machines, Shengya block making machines, Jinbaoshan stone crushers and SHANTUI forklifts. Our quality of product drives customers towards us — and we work hard to keep it, since opportunities are limitless.";
+
+export const INTERLOCK_COPY = [
+  "RCB has been in the interlock business since 1986. Our quality products have contributed to our success in the business in Sri Lanka — as a result, today we are one of the main suppliers exporting interlock to the Maldives and India.",
+  "With the rapid development of the business, in the early 1990s we came into the paving business. By selecting RCB paving, customers get full satisfaction for what they spend — we look forward to an exciting future with new ideas and directions, while continuing the commitment to quality and value that built our success.",
+];
+
+export const STEEL_COPY = [
+  "RCB steel construction has an island-wide reputation for excellence in the custom design, engineering, fabrication and creation of a wide variety of engineered steel frame buildings.",
+  "We believe that high quality steel fabrication always brings pride to our company. Visit our head office to learn about our products, meet our friendly staff and take full advantage of our service — every project brings a unique opportunity to create value for the customer.",
 ];

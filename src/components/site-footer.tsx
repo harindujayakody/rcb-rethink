@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import { CONTACT, NAV_LINKS } from "@/lib/data";
+import { CONTACT, NAV_LINKS, SOCIAL } from "@/lib/data";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -24,6 +24,19 @@ export function SiteFooter() {
             Construction machinery, block making machines, interlock paving and
             cement blocks — {CONTACT.tagline.toLowerCase()}.
           </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {SOCIAL.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md bg-white/10 px-3 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-white/90 transition-colors hover:bg-white/20 hover:text-white"
+              >
+                {s.label}
+              </a>
+            ))}
+          </div>
         </div>
 
         <div>

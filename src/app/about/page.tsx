@@ -4,15 +4,13 @@ import Link from "next/link";
 import { Award, Factory, CheckCircle2, ArrowRight } from "lucide-react";
 import { PageHero, SectionHeading, CtaBand } from "@/components/sections";
 import { Card, CardContent } from "@/components/ui/card";
-import { CONTACT } from "@/lib/data";
+import { CONTACT, HISTORY_PARAGRAPHS, CHAIRMAN_QUOTE, DISTRIBUTORSHIPS } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "About RCB Holdings | Construction & Machinery Sri Lanka",
   description:
     "The story of RCB Holdings (Pvt) Ltd — 30 years of construction machinery, interlock paving and cement blocks in Sri Lanka.",
 };
-
-const BRANDS = ["SDLG", "YINENG", "Noah", "Shengya", "SHANTUI", "Jinbaoshan"];
 
 const COMMITMENTS = [
   "Supply machines and materials our customers can rely on",
@@ -24,7 +22,7 @@ const AWARDS = [
   {
     name: "Shramabhimanee National Award",
     year: "2013",
-    note: "National recognition for industrial contribution.",
+    note: "Awarded to Ruwan Constructions for industrial contribution.",
   },
   {
     name: "Construction Exhibition Co-Sponsor Award",
@@ -52,26 +50,9 @@ export default function AboutPage() {
               title="Built on blocks. Driven by machines."
             />
             <div className="mt-6 space-y-4 leading-relaxed text-steel">
-              <p>
-                The RCB story began nearly 30 years ago with the purchase of
-                the first Sri Lankan manufactured cement block making machine.
-                From that single machine grew a business that now spans cement
-                blocks, interlock paving, construction machinery distribution
-                and construction services.
-              </p>
-              <p>
-                Along the way, RCB introduced a fully automated interlock
-                paving machine in Sri Lanka under the RCB name — and has been
-                in the interlock paving business since 1986, supplying and
-                laying paving across the island.
-              </p>
-              <p>
-                Today, RCB Holdings (Pvt) Ltd brings together heavy
-                construction machinery, block making plants, steel
-                construction, ready mix concrete and concrete products under one
-                roof — backed by the after-sales service and technical
-                knowledge the company has built over three decades.
-              </p>
+              {HISTORY_PARAGRAPHS.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
             </div>
           </div>
           <div className="relative">
@@ -104,12 +85,7 @@ export default function AboutPage() {
             <CardContent className="p-8 sm:p-12">
               <Factory className="h-8 w-8 text-brand" />
               <blockquote className="mt-6 text-xl font-medium leading-relaxed text-brand-ink sm:text-2xl">
-                &ldquo;RCB is the result of more than 30 years of work. We
-                began with the first Sri Lankan manufactured cement block
-                making machine, and today we supply machinery and concrete
-                products across the island — including fully automated
-                interlock paving machines introduced under the RCB
-                name.&rdquo;
+                &ldquo;{CHAIRMAN_QUOTE}&rdquo;
               </blockquote>
               <div className="mt-8 border-t border-line pt-6">
                 <p className="text-lg font-extrabold text-brand-ink">
@@ -157,23 +133,26 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Brands we supply */}
+      {/* Authorized distributorships */}
       <section className="bg-brand-deep">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <SectionHeading
-            eyebrow="Our brands"
-            title="Machinery brands we supply"
-            description="A line-up of construction and industrial machinery brands we bring to Sri Lanka."
+            eyebrow="Authorized distributor"
+            title="The brands we represent"
+            description="RCB Holdings is the authorized distributor in Sri Lanka for these construction and industrial machinery brands."
             align="center"
             dark
           />
           <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-            {BRANDS.map((b) => (
+            {DISTRIBUTORSHIPS.map((d) => (
               <div
-                key={b}
+                key={d.brand}
                 className="rounded-md border border-white/15 bg-white/5 px-4 py-6 text-center"
               >
-                <p className="display text-2xl text-white">{b}</p>
+                <p className="display text-2xl text-white">{d.brand}</p>
+                <p className="mt-2 text-xs leading-relaxed text-white/60">
+                  {d.scope}
+                </p>
               </div>
             ))}
           </div>
