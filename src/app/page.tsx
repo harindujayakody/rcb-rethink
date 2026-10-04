@@ -56,48 +56,14 @@ const FEATURED = [
 export default function Home() {
   return (
     <>
-      {/* ============ HERO — Dim Mood shape: dark shell, curved card river ============ */}
+      {/* ============ HERO — card collage with curved river seam ============ */}
       <section className="bg-white px-3 pt-4 sm:px-5 sm:pt-6">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-[#0a0f1e]">
-          {/* inner nav */}
-          <nav className="relative flex items-center justify-between px-6 pt-6 sm:px-10">
-            <Link href="/" className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white font-display text-xl text-[#0a0f1e]">
-                R
-              </span>
-              <span className="font-display text-xl tracking-wide text-white">
-                RCB
-              </span>
-            </Link>
-            <div className="hidden items-center gap-8 md:flex">
-              {[
-                ["Machinery", "/machinery"],
-                ["Construction", "/construction"],
-                ["Concrete", "/concrete-products"],
-                ["About", "/about"],
-              ].map(([label, href]) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="text-sm font-semibold text-white/60 transition-colors hover:text-white"
-                >
-                  {label}
-                </Link>
-              ))}
-            </div>
-            <Button
-              render={<Link href="/quote" />}
-              className="rounded-full bg-white px-6 font-bold text-[#0a0f1e] hover:bg-tint"
-            >
-              Request a Quote
-            </Button>
-          </nav>
-
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-tint">
           {/* card collage with curved river seam */}
-          <div className="relative flex flex-col gap-5 px-6 pb-6 pt-6 sm:px-10 sm:pb-10 lg:flex-row">
+          <div className="relative flex flex-col gap-5 p-6 sm:p-10 lg:flex-row">
             {/* left stack */}
             <div className="flex w-full flex-col gap-5 lg:w-[29%]">
-              <Card className="rounded-[1.75rem] border-0 bg-white lg:rounded-br-[4.5rem]">
+              <Card className="rounded-[1.75rem] border border-line bg-white shadow-lift lg:rounded-br-[4.5rem]">
                 <CardContent className="p-6 sm:p-7">
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-steel">
                     Pioneering the industry
@@ -112,7 +78,7 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="flex-1 rounded-[1.75rem] border-0 bg-white lg:rounded-tr-[4.5rem]">
+              <Card className="flex-1 rounded-[1.75rem] border border-line bg-white shadow-lift lg:rounded-tr-[4.5rem]">
                 <CardContent className="flex h-full flex-col p-6 sm:p-7">
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-steel">
                     Introduction
@@ -138,7 +104,7 @@ export default function Home() {
             </div>
 
             {/* headline card */}
-            <Card className="flex-1 rounded-[1.75rem] border-0 bg-white lg:rounded-tl-[4.5rem]">
+            <Card className="flex-1 rounded-[1.75rem] border border-line bg-white shadow-lift lg:rounded-tl-[4.5rem]">
               <CardContent className="p-6 sm:p-10">
                 <h1 className="text-5xl font-black leading-[0.95] tracking-tight text-[#0a0f1e] sm:text-6xl xl:text-7xl">
                   We craft the
