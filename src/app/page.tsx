@@ -62,7 +62,7 @@ export default function Home() {
           {/* top card: stat | headline */}
           <Card className="rounded-[1.5rem] border border-line bg-white shadow-lift">
             <div className="grid lg:grid-cols-[29%_1fr]">
-              <CardContent className="p-7 sm:p-9">
+              <CardContent className="order-2 p-7 sm:p-9 lg:order-1">
                 <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-steel">
                   Pioneering the industry
                 </p>
@@ -74,7 +74,7 @@ export default function Home() {
                   Lankan block machine to fully automated plants.
                 </p>
               </CardContent>
-              <CardContent className="p-7 pt-0 sm:p-9 lg:pt-9">
+              <CardContent className="order-1 p-7 pb-0 sm:p-9 sm:pb-0 lg:order-2 lg:pb-9">
                 <h1 className="text-5xl font-black leading-[0.95] tracking-tight text-[#0a0f1e] sm:text-6xl xl:text-7xl">
                   We craft the
                   <br />
