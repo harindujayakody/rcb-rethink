@@ -56,70 +56,80 @@ const FEATURED = [
 export default function Home() {
   return (
     <>
-      {/* ============ HERO — futuristic dark shell, card collage ============ */}
+      {/* ============ HERO — Dim Mood shape: dark shell, curved card river ============ */}
       <section className="bg-white px-3 pt-4 sm:px-5 sm:pt-6">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-brand-deep">
-          {/* ambient glow */}
-          <div aria-hidden className="pointer-events-none absolute inset-0">
-            <div className="absolute -top-40 right-[10%] h-[28rem] w-[28rem] rounded-full bg-brand/40 blur-3xl" />
-            <div className="absolute -bottom-48 -left-24 h-[24rem] w-[24rem] rounded-full bg-brand/20 blur-3xl" />
-          </div>
-
-          {/* inner top bar */}
-          <div className="relative flex items-center justify-between px-5 pt-5 sm:px-8 sm:pt-6">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-white/60">
-              RCB Holdings · Est. 1986
-            </p>
-            <div className="flex items-center gap-4">
-              <a
-                href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}
-                className="hidden items-center gap-2 font-mono text-xs tracking-wider text-white/70 transition-colors hover:text-white md:flex"
-              >
-                <Phone className="h-3.5 w-3.5" />
-                {CONTACT.phones[0]}
-              </a>
-              <Button
-                render={<Link href="/quote" />}
-                className="rounded-lg bg-white px-5 font-bold text-brand-deep hover:bg-tint"
-              >
-                Request a Quote
-              </Button>
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-[#0a0f1e]">
+          {/* inner nav */}
+          <nav className="relative flex items-center justify-between px-6 pt-6 sm:px-10">
+            <Link href="/" className="flex items-center gap-2.5">
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white font-display text-xl text-[#0a0f1e]">
+                R
+              </span>
+              <span className="font-display text-xl tracking-wide text-white">
+                RCB
+              </span>
+            </Link>
+            <div className="hidden items-center gap-8 md:flex">
+              {[
+                ["Machinery", "/machinery"],
+                ["Construction", "/construction"],
+                ["Concrete", "/concrete-products"],
+                ["About", "/about"],
+              ].map(([label, href]) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="text-sm font-semibold text-white/60 transition-colors hover:text-white"
+                >
+                  {label}
+                </Link>
+              ))}
             </div>
-          </div>
+            <Button
+              render={<Link href="/quote" />}
+              className="rounded-full bg-white px-6 font-bold text-[#0a0f1e] hover:bg-tint"
+            >
+              Request a Quote
+            </Button>
+          </nav>
 
-          {/* card collage */}
-          <div className="relative grid gap-4 px-5 pb-5 pt-5 sm:px-8 sm:pb-8 lg:grid-cols-[360px_1fr]">
-            {/* left column */}
-            <div className="order-2 flex flex-col gap-4 lg:order-1">
-              <Card className="rounded-2xl border-0 bg-white">
+          {/* card collage with curved river seam */}
+          <div className="relative flex flex-col gap-5 px-6 pb-6 pt-6 sm:px-10 sm:pb-10 lg:flex-row">
+            {/* left stack */}
+            <div className="flex w-full flex-col gap-5 lg:w-[29%]">
+              <Card className="rounded-[1.75rem] border-0 bg-white lg:rounded-br-[4.5rem]">
                 <CardContent className="p-6 sm:p-7">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-steel">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-steel">
                     Pioneering the industry
                   </p>
-                  <p className="display mt-3 text-6xl text-brand">30+</p>
-                  <p className="mt-2 text-sm leading-relaxed text-steel">
-                    Years of machinery, paving and blocks — from the first
-                    Sri Lankan block machine to fully automated plants.
+                  <p className="mt-2 text-6xl font-black tracking-tight text-[#0a0f1e]">
+                    30+
+                  </p>
+                  <p className="mt-3 text-[13px] leading-relaxed text-steel">
+                    Years of machinery, paving and blocks — from the first Sri
+                    Lankan block machine to fully automated plants.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="flex-1 rounded-2xl border-0 bg-white">
+              <Card className="flex-1 rounded-[1.75rem] border-0 bg-white lg:rounded-tr-[4.5rem]">
                 <CardContent className="flex h-full flex-col p-6 sm:p-7">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-steel">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-steel">
                     Introduction
                   </p>
-                  <p className="mt-3 text-lg font-bold leading-snug text-brand-ink">
-                    Heavy machines. Solid blocks.
+                  <p className="mt-3 text-[22px] font-extrabold leading-snug tracking-tight text-[#0a0f1e]">
+                    Heavy machines.
+                    <br />
+                    Solid blocks.
                   </p>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-steel">
+                  <p className="mt-3 flex-1 text-[13px] leading-relaxed text-steel">
                     Construction machinery, block making machines, interlock
                     paving and cement blocks — from our yard in Hokandara to
                     your site.
                   </p>
                   <Button
                     render={<Link href="/machinery" />}
-                    className="mt-6 w-full rounded-lg bg-brand-deep font-bold text-white hover:bg-brand"
+                    className="mt-6 w-full rounded-full bg-[#0a0f1e] font-bold text-white hover:bg-brand"
                   >
                     Explore Machinery <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -128,31 +138,22 @@ export default function Home() {
             </div>
 
             {/* headline card */}
-            <Card className="order-1 overflow-hidden rounded-2xl border-0 bg-white lg:order-2">
-              <CardContent className="p-6 sm:p-8">
-                <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-steel">
-                  RCB Holdings (Pvt) Ltd — Hokandara, Sri Lanka
-                </p>
-                <h1 className="display mt-4 text-5xl leading-[0.95] text-brand-ink sm:text-6xl xl:text-7xl">
+            <Card className="flex-1 rounded-[1.75rem] border-0 bg-white lg:rounded-tl-[4.5rem]">
+              <CardContent className="p-6 sm:p-10">
+                <h1 className="text-5xl font-black leading-[0.95] tracking-tight text-[#0a0f1e] sm:text-6xl xl:text-7xl">
                   We craft the
                   <br />
                   future <span className="text-brand">built.</span>
                 </h1>
-                <div className="relative mt-6 overflow-hidden rounded-xl">
+                <div className="mt-6 overflow-hidden rounded-2xl lg:rounded-tl-[2.5rem]">
                   <Image
                     src="/images/hero-excavator.jpg"
                     alt="Excavator at work on a construction site"
                     width={1400}
                     height={900}
-                    className="h-64 w-full object-cover sm:h-80 lg:h-[380px]"
+                    className="h-64 w-full object-cover sm:h-80 lg:h-[400px]"
                     priority
                   />
-                  <div className="absolute bottom-4 left-4 rounded-md bg-brand-deep/90 px-4 py-2.5 backdrop-blur">
-                    <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/70">
-                      Featured
-                    </p>
-                    <p className="display text-lg text-white">SDLG LG6225E</p>
-                  </div>
                 </div>
               </CardContent>
             </Card>
