@@ -1,0 +1,151 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------- RCB Holdings design tokens ---------- */
+@theme {
+  --color-brand: #003580;
+  --color-brand-deep: #00264f;
+  --color-brand-ink: #0a1f3d;
+  --color-steel: #5a6577;
+  --color-mist: #f1f5f9;
+  --color-tint: #eaf0f9;
+  --color-line: rgba(0, 53, 128, 0.12);
+
+  --font-display: var(--font-anton), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: #ffffff;
+  --foreground: #0a1f3d;
+  --card: #ffffff;
+  --card-foreground: #0a1f3d;
+  --popover: #ffffff;
+  --popover-foreground: #0a1f3d;
+  --primary: #003580;
+  --primary-foreground: #ffffff;
+  --secondary: #eaf0f9;
+  --secondary-foreground: #003580;
+  --muted: #f1f5f9;
+  --muted-foreground: #5a6577;
+  --accent: #eaf0f9;
+  --accent-foreground: #003580;
+  --destructive: #c81e1e;
+  --border: rgba(0, 53, 128, 0.14);
+  --input: rgba(0, 53, 128, 0.18);
+  --ring: #003580;
+  --chart-1: #003580;
+  --chart-2: #0a66c2;
+  --chart-3: #5a6577;
+  --chart-4: #9db4d0;
+  --chart-5: #eaf0f9;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0a1f3d;
+  --sidebar-primary: #003580;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eaf0f9;
+  --sidebar-accent-foreground: #003580;
+  --sidebar-border: rgba(0, 53, 128, 0.14);
+  --sidebar-ring: #003580;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  /* Display type: Anton, uppercase, tight */
+  .display {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 0.95;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+    font-weight: 600;
+  }
+  .eyebrow-rule {
+    display: inline-block;
+    width: 2.5rem;
+    height: 3px;
+    background: var(--color-brand);
+    vertical-align: middle;
+    margin-right: 0.75rem;
+  }
+  /* Eyebrow on dark backgrounds — explicit colors beat utility specificity */
+  .eyebrow-light {
+    color: #ffffff;
+  }
+  .eyebrow-light .eyebrow-rule {
+    background: #ffffff;
+  }
+  /* Hard offset shadow used on key cards — industrial print feel */
+  .shadow-hard {
+    box-shadow: 8px 8px 0 0 rgba(0, 53, 128, 0.12);
+  }
+  .shadow-lift {
+    box-shadow: 0 24px 60px -24px rgba(0, 53, 128, 0.35);
+  }
+}
